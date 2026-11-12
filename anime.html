@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Archive | Anime & Manga</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #f5f2eb;
+        }
+
+        .shelf-heading {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .shelf-heading h1 {
+            font-family: Georgia, serif;
+            color: #26354a;
+        }
+
+        .bookshelf {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 20px;
+            padding: 30px 25px 15px;
+            margin: 30px auto;
+            max-width: 1200px;
+            height: 330px;
+            background: #e8dfd1;
+            border-bottom: 18px solid #806044;
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .anime {
+            width: 17%;
+            max-width: 175px;
+            height: 250px;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .anime img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: 3px 4px 8px rgba(0,0,0,0.25);
+        }
+
+        .anime:hover {
+            transform: translateY(-12px);
+        }
+
+        @media (max-width: 750px) {
+            .bookshelf {
+                height: auto;
+                flex-wrap: wrap;
+            }
+
+            .anime {
+                width: 28%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#collections">Collections</a>
+        <a href="#">About</a>
+        <a href="my-shelf.html">My Shelf</a>
+        <a href="signin.html">Sign In</a>
+    </nav>
+
+    <section class="shelf-heading">
+        <h1>The Anime & Manga Collection.</h1>
+        <p>Worlds beyond imagination, stories beyond pages.</p>
+    </section>
+
+    <div class="bookshelf">
+
+        <a href="anime-details.html?anime=spirited" class="anime">
+            <img src="away.jpg" alt="Spirited Away">
+        </a>
+
+        <a href="anime-details.html?anime=yourname" class="anime">
+            <img src="yourname.jpg" alt="Your Name">
+        </a>
+
+        <a href="anime-details.html?anime=deathnote" class="anime">
+            <img src="deathnote.jpg" alt="Death Note">
+        </a>
+
+        <a href="anime-details.html?anime=demon slayer" class="anime">
+            <img src="demon.jpg" alt="Demon Slayer">
+        </a>
+
+        <a href="anime-details.html?anime=attack" class="anime">
+            <img src="attack.jpg" alt="Attack on Titan">
+        </a>
+
+    </div>
+
+    <div class="bookshelf">
+
+        <a href="anime-details.html?anime=howl" class="anime">
+            <img src="moving.jpg" alt="Howl's Moving Castle">
+        </a>
+
+        <a href="anime-details.html?anime=onepiece" class="anime">
+            <img src="one.jpg" alt="One Piece">
+        </a>
+
+        <a href="anime-details.html?anime=naruto" class="anime">
+            <img src="naruto.jpg" alt="Naruto">
+        </a>
+
+        <a href="anime-details.html?anime=haikyuu" class="anime">
+            <img src="haikyuu.jpg" alt="Haikyuu">
+        </a>
+
+        <a href="anime-details.html?anime=jujutsu" class="anime">
+            <img src="juju.jpg" alt="Jujutsu Kaisen">
+        </a>
+
+    </div>
+
+    <footer>
+        THE ARCHIVE. — A place for everything worth remembering.
+    </footer>
+<script src="auth.js"></script>
+</body>
+</html>

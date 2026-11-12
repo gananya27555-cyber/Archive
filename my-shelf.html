@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Archive | My Shelf</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #f5f2eb;
+        }
+
+        .shelf-heading {
+            text-align: center;
+            margin: 40px;
+            color: #26354a;
+            font-family: Georgia, serif;
+        }
+
+        .saved-container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 25px;
+        }
+
+        .saved-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 25px;
+        }
+
+        .saved-item {
+            background: #e8dfd1;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #c9b99f;
+        }
+
+        .saved-item img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .saved-item h3 {
+            color: #26354a;
+            font-family: Georgia, serif;
+        }
+
+        .saved-item a {
+            color: #26354a;
+            text-decoration: none;
+        }
+
+        .remove-button {
+            background: #26354a;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #514638;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#collections">Collections</a>
+        <a href="my-shelf.html">My Shelf</a>
+        <a href="signin.html">Sign In</a>
+    </nav>
+
+    <h1 class="shelf-heading">My Personal Shelf.</h1>
+
+    <div class="saved-container">
+        <div id="savedItems" class="saved-grid"></div>
+    </div>
+
+    <footer>
+        THE ARCHIVE. — A place for everything worth remembering.
+    </footer>
+
+    <script src="my-shelf.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

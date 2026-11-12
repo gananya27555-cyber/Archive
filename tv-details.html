@@ -1,0 +1,229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Archive | TV Details</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #f5f2eb;
+        }
+
+        .details-heading {
+            text-align: center;
+            margin: 40px 0;
+            color: #26354a;
+            font-family: Georgia, serif;
+        }
+
+        .show-container {
+            display: flex;
+            gap: 45px;
+            align-items: center;
+            max-width: 850px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #e8dfd1;
+            border: 1px solid #c9b99f;
+        }
+
+        .show-container img {
+            width: 250px;
+            height: 360px;
+            object-fit: cover;
+            box-shadow: 4px 5px 10px rgba(0,0,0,0.2);
+        }
+
+        .show-info h2 {
+            color: #26354a;
+            font-family: Georgia, serif;
+        }
+
+        .show-info p {
+            line-height: 1.8;
+            color: #514638;
+        }
+
+        .review-section {
+            max-width: 850px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #e8dfd1;
+            border: 1px solid #c9b99f;
+        }
+
+        .review-section h2 {
+            color: #26354a;
+            font-family: Georgia, serif;
+        }
+
+        .stars {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+        .stars input {
+            display: none;
+        }
+
+        .stars label {
+            font-size: 30px;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .stars input:checked ~ label,
+        .stars label:hover,
+        .stars label:hover ~ label {
+            color: #c28b35;
+        }
+
+        .review-section textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            background: #f5f2eb;
+            border: 1px solid #b9a78e;
+            font-family: inherit;
+        }
+
+        .review-section button {
+            padding: 10px 20px;
+            background: #26354a;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .saved-review {
+            border-top: 1px solid #c9b99f;
+            padding: 12px 0;
+        }
+.related-section {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #e8dfd1;
+    border: 1px solid #c9b99f;
+}
+
+.related-section h2 {
+    color: #26354a;
+    font-family: Georgia, serif;
+}
+
+.related-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.related-list a {
+    display: block;
+    padding: 12px 18px;
+    background: #f5f2eb;
+    border: 1px solid #b9a78e;
+    color: #26354a;
+    text-decoration: none;
+}
+
+.related-list a:hover {
+    background: #26354a;
+    color: white;
+}
+        @media (max-width: 650px) {
+            .show-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#collections">Collections</a>
+        <a href="tv.html">TV Shows</a>
+        <a href="my-shelf.html">My Shelf</a>
+        <a href="signin.html">Sign In</a>
+    </nav>
+
+    <h1 class="details-heading">Inside the Show.</h1>
+
+    <main class="show-container">
+
+        <img id="cover" src="" alt="TV Show Poster">
+
+        <div class="show-info">
+            <h2 id="title"></h2>
+            <p id="creator"></p>
+            <p id="genre"></p>
+            <p id="year"></p>
+            <p id="description"></p>
+            <button id="saveButton" onclick="saveToShelf()">
+    + Add to My Shelf
+</button>
+        </div>
+
+    </main>
+<section class="related-section">
+    <h2>From the Same Universe.</h2>
+    <p>More stories connected to this one.</p>
+    <div id="relatedShows" class="related-list"></div>
+</section>
+    <section class="review-section">
+
+        <h2>Viewer's Corner.</h2>
+        <p>Watched this show? Share your thoughts.</p>
+
+        <form id="reviewForm">
+
+            <label>Your Rating</label>
+
+            <div class="stars">
+                <input type="radio" name="rating" id="star5" value="5">
+                <label for="star5">★</label>
+
+                <input type="radio" name="rating" id="star4" value="4">
+                <label for="star4">★</label>
+
+                <input type="radio" name="rating" id="star3" value="3">
+                <label for="star3">★</label>
+
+                <input type="radio" name="rating" id="star2" value="2">
+                <label for="star2">★</label>
+
+                <input type="radio" name="rating" id="star1" value="1">
+                <label for="star1">★</label>
+            </div>
+
+            <label for="review">Your Review</label>
+
+            <textarea id="review" rows="5"
+                placeholder="What did you think about this show?"></textarea>
+
+            <button type="submit">Submit Review</button>
+
+            <p id="message"></p>
+
+        </form>
+
+        <div id="reviewDisplay"></div>
+
+    </section>
+
+    <footer>
+        THE ARCHIVE. — A place for everything worth remembering.
+    </footer>
+
+    <script src="tv-details.js"></script>
+
+</body>
+</html>

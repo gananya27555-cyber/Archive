@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Archive | Comics</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #f5f2eb;
+        }
+
+        .page-heading {
+            text-align: center;
+            margin: 40px 0;
+            color: #26354a;
+            font-family: Georgia, serif;
+        }
+
+        .comic-shelf {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-end;
+            gap: 20px;
+            max-width: 1100px;
+            min-height: 310px;
+            margin: 40px auto;
+            padding: 35px 15px 0;
+            background: #e8dfd1;
+            border-bottom: 16px solid #806044;
+            box-shadow: 0 5px 8px rgba(0,0,0,0.15);
+        }
+
+        .comic {
+            width: 170px;
+            text-align: center;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #26354a;
+        }
+
+        .comic img {
+            width: 150px;
+            height: 215px;
+            object-fit: cover;
+            box-shadow: 3px 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .comic img:hover {
+            transform: translateY(-8px);
+        }
+
+        .comic p {
+            font-family: Georgia, serif;
+            font-size: 14px;
+        }
+
+        @media (max-width: 900px) {
+            .comic-shelf {
+                flex-wrap: wrap;
+            }
+        }
+    .publisher-filters {
+    text-align: center;
+    margin: 25px auto 35px;
+}
+
+.publisher-filters button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid #806044;
+    background: #e8dfd1;
+    color: #26354a;
+    font-family: Georgia, serif;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.publisher-filters button:hover,
+.publisher-filters button.active {
+    background: #26354a;
+    color: white;
+}
+
+.comic.hidden {
+    display: none;
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#collections">Collections</a>
+    <a href="comics.html">Comics</a>
+<a href="my-shelf.html">My Shelf</a>
+<a href="signin.html">Sign In</a>
+</nav>
+
+<h1 class="page-heading">The Comic Collection.</h1>
+<div class="publisher-filters">
+    <button class="active" onclick="filterComics('all', this)">All Comics</button>
+    <button onclick="filterComics('marvel', this)">Marvel</button>
+    <button onclick="filterComics('dc', this)">DC</button>
+    <button onclick="filterComics('other', this)">Other Publishers</button>
+</div>
+
+<!-- First Shelf -->
+
+<div class="comic-shelf">
+
+    <a href="comic-details.html?comic=batman" class="comic" data-publisher="dc">
+        <img src="images/batman-year-one.jpg" alt="Batman Year One">
+        <p>Batman: Year One</p>
+    </a>
+
+    <a href="comic-details.html?comic=watchmen" class="comic" data-publisher="dc">
+        <img src="images/watchmen.jpg" alt="Watchmen">
+        <p>Watchmen</p>
+    </a>
+
+    <a href="comic-details.html?comic=killingjoke" class="comic" data-publisher="dc">
+        <img src="images/killing-joke.jpg" alt="The Killing Joke">
+        <p>The Killing Joke</p>
+    </a>
+
+    <a href="comic-details.html?comic=spiderman" class="comic" data-publisher="marvel">
+        <img src="images/spider-man-blue.jpg" alt="Spider-Man Blue">
+        <p>Spider-Man: Blue</p>
+    </a>
+
+    <a href="comic-details.html?comic=civilwar" class="comic" data-publisher="marvel">
+        <img src="images/civil-war.jpg" alt="Civil War">
+        <p>Marvel: Civil War</p>
+    </a>
+
+</div>
+
+<!-- Second Shelf -->
+
+<div class="comic-shelf">
+
+    <a href="comic-details.html?comic=infinity" class="comic" data-publisher="other">
+        <img src="images/infinity-gauntlet.jpg" alt="Infinity Gauntlet">
+        <p>The Infinity Gauntlet</p>
+    </a>
+
+    <a href="comic-details.html?comic=superman" class="comic" data-publisher="dc">
+        <img src="images/superman-red-son.jpg" alt="Superman Red Son">
+        <p>Superman: Red Son</p>
+    </a>
+
+    <a href="comic-details.html?comic=sandman" class="comic" data-publisher="other">
+        <img src="images/sandman.jpg" alt="The Sandman">
+        <p>The Sandman</p>
+    </a>
+
+    <a href="comic-details.html?comic=vendetta" class="comic" data-publisher="other">
+        <img src="images/v-for-vendetta.jpg" alt="V for Vendetta">
+        <p>V for Vendetta</p>
+    </a>
+
+    <a href="comic-details.html?comic=daysfuture" class="comic" data-publisher="marvel">
+        <img src="images/days-of-future-past.jpg" alt="X-Men Days of Future Past">
+        <p>X-Men: Days of Future Past</p>
+    </a>
+
+</div>
+
+<footer>
+    THE ARCHIVE. — A place for everything worth remembering.
+</footer>
+<script>
+function filterComics(publisher, button) {
+
+    var comics = document.querySelectorAll(".comic");
+
+    comics.forEach(function(comic) {
+
+        if (publisher === "all" ||
+            comic.getAttribute("data-publisher") === publisher) {
+
+            comic.classList.remove("hidden");
+
+        } else {
+
+            comic.classList.add("hidden");
+
+        }
+
+    });
+
+    var buttons = document.querySelectorAll(".publisher-filters button");
+
+    buttons.forEach(function(btn) {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+}
+</script>
+<script src="auth.js"></script>
+</body>
+</html>

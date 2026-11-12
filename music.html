@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Archive | Music Albums</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #f5f2eb;
+        }
+
+        .page-heading {
+            text-align: center;
+            margin: 40px 0;
+            color: #26354a;
+            font-family: Georgia, serif;
+        }
+
+        .shelf {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-end;
+            gap: 20px;
+            max-width: 1100px;
+            min-height: 310px;
+            margin: 40px auto;
+            padding: 35px 15px 0;
+            background: #e8dfd1;
+            border-bottom: 16px solid #806044;
+            box-shadow: 0 5px 8px rgba(0,0,0,0.15);
+        }
+
+        .album {
+            width: 170px;
+            text-align: center;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #26354a;
+        }
+
+        .album img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            box-shadow: 3px 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .album img:hover {
+            transform: translateY(-8px);
+        }
+
+        .album p {
+            font-family: Georgia, serif;
+            font-size: 14px;
+        }
+
+        @media (max-width: 900px) {
+            .shelf {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#collections">Collections</a>
+    <a href="music.html">Music Albums</a>
+    <a href="my-shelf.html">My Shelf</a>
+    <a href="signin.html">Sign In</a>
+</nav>
+
+<h1 class="page-heading">The Music Collection.</h1>
+
+<!-- First Shelf -->
+
+<div class="shelf">
+
+    <a href="album-details.html?album=nevermind" class="album">
+        <img src="images/nevermind.jpg" alt="Nevermind">
+        <p>Nevermind - Nirvana</p>
+    </a>
+
+    <a href="album-details.html?album=metallica" class="album">
+        <img src="images/metallica.jpg" alt="Metallica">
+        <p>Metallica - The Black Album</p>
+    </a>
+
+    <a href="album-details.html?album=thriller" class="album">
+        <img src="images/thriller.jpg" alt="Thriller">
+        <p>Thriller - Michael Jackson</p>
+    </a>
+
+    <a href="album-details.html?album=appetite" class="album">
+        <img src="images/appetite.jpg" alt="Appetite for Destruction">
+        <p>Appetite for Destruction</p>
+    </a>
+
+    <a href="album-details.html?album=queen" class="album">
+        <img src="images/queen.jpg" alt="A Night at the Opera">
+        <p>A Night at the Opera - Queen</p>
+    </a>
+
+</div>
+
+<!-- Second Shelf -->
+
+<div class="shelf">
+
+    <a href="album-details.html?album=darkside" class="album">
+        <img src="images/dark-side.jpg" alt="Dark Side of the Moon">
+        <p>The Dark Side of the Moon</p>
+    </a>
+
+    <a href="album-details.html?album=abbeyroad" class="album">
+        <img src="images/abbey-road.jpg" alt="Abbey Road">
+        <p>Abbey Road - The Beatles</p>
+    </a>
+
+    <a href="album-details.html?album=rumours" class="album">
+        <img src="images/rumours.jpg" alt="Rumours">
+        <p>Rumours - Fleetwood Mac</p>
+    </a>
+
+    <a href="album-details.html?album=am" class="album">
+        <img src="images/am.jpg" alt="AM">
+        <p>AM - Arctic Monkeys</p>
+    </a>
+
+    <a href="album-details.html?album=backinblack" class="album">
+        <img src="images/back-in-black.jpg" alt="Back in Black">
+        <p>Back in Black - AC/DC</p>
+    </a>
+
+</div>
+
+<footer>
+    THE ARCHIVE. — A place for everything worth remembering.
+</footer>
+<script src="auth.js"></script>
+</body>
+</html>
+

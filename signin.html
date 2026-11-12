@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership | The Archive</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background: #f5f2eb;
+            color: #29251f;
+        }
+
+        .membership {
+            max-width: 950px;
+            margin: 75px auto;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .membership-card {
+            width: 100%;
+            max-width: 480px;
+            background: #e8dfd1;
+            padding: 45px;
+            border: 1px solid #c5b69f;
+            box-shadow: 5px 7px 15px rgba(0,0,0,0.12);
+            box-sizing: border-box;
+        }
+
+        .membership-card h1 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            font-weight: normal;
+            color: #182b59;
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #795438;
+            margin-bottom: 30px;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #b9a68e;
+            margin-bottom: 25px;
+        }
+
+        .tabs button {
+            width: 50%;
+            padding: 12px;
+            background: transparent;
+            border: none;
+            color: #795438;
+            cursor: pointer;
+            font-family: Georgia, serif;
+            font-size: 17px;
+        }
+
+        .tabs button.active {
+            color: #182b59;
+            border-bottom: 3px solid #182b59;
+        }
+
+        .membership-card label {
+            display: block;
+            margin: 15px 0 7px;
+            color: #493c30;
+        }
+
+        .membership-card input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #b9a68e;
+            background: #f5f2eb;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 25px;
+            background: #182b59;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: #795438;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 18px;
+            color: #795438;
+        }
+
+        #registerForm {
+            display: none;
+        }
+
+        #welcome {
+            display: none;
+            text-align: center;
+        }
+
+        #welcome h2 {
+            font-family: Georgia, serif;
+            color: #182b59;
+            font-size: 28px;
+            font-weight: normal;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: #182b59;
+        }
+
+        @media (max-width: 600px) {
+            .membership-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">THE ARCHIVE.</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#collections">Collections</a>
+            <a href="my-shelf.html">My Shelf</a>
+        </nav>
+    </header>
+
+    <main class="membership">
+
+        <div class="membership-card">
+
+            <div id="forms">
+
+                <h1>Become a Member.</h1>
+                <p class="subtitle">A little place in the Archive, just for you.</p>
+
+                <div class="tabs">
+                    <button type="button" id="loginTab" class="active"
+                        onclick="showLogin()">Sign In</button>
+
+                    <button type="button" id="registerTab"
+                        onclick="showRegister()">Join Us</button>
+                </div>
+
+                <!-- SIGN IN FORM -->
+
+                <form id="loginForm">
+
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail"
+                        placeholder="Enter your email" required>
+
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword"
+                        placeholder="Enter your password" required>
+
+                    <button type="submit" class="submit-button">
+                        Enter the Archive
+                    </button>
+
+                </form>
+
+                <!-- REGISTER FORM -->
+
+                <form id="registerForm">
+
+                    <label for="registerName">Your Name</label>
+                    <input type="text" id="registerName"
+                        placeholder="Enter your name" required>
+
+                    <label for="registerEmail">Email Address</label>
+                    <input type="email" id="registerEmail"
+                        placeholder="Enter your email" required>
+
+                    <label for="registerPassword">Create Password</label>
+                    <input type="password" id="registerPassword"
+                        placeholder="Create a password"
+                        minlength="6" required>
+
+                    <button type="submit" class="submit-button">
+                        Create Membership
+                    </button>
+
+                </form>
+
+                <p id="message"></p>
+
+            </div>
+
+            <!-- WELCOME MESSAGE -->
+
+            <div id="welcome">
+
+                <h2 id="welcomeName">Welcome!</h2>
+
+                <p>You now have a place in The Archive.</p>
+
+                <a href="index.html" class="back-link">
+                    Explore the collections →
+                </a>
+
+                <button class="submit-button" onclick="logout()">
+                    Sign Out
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>THE ARCHIVE. — A place for everything worth remembering.</p>
+    </footer>
+
+    <script>
+
+        function showLogin() {
+            document.getElementById("loginForm").style.display = "block";
+            document.getElementById("registerForm").style.display = "none";
+
+            document.getElementById("loginTab").classList.add("active");
+            document.getElementById("registerTab").classList.remove("active");
+
+            document.getElementById("message").textContent = "";
+        }
+
+        function showRegister() {
+            document.getElementById("loginForm").style.display = "none";
+            document.getElementById("registerForm").style.display = "block";
+
+            document.getElementById("registerTab").classList.add("active");
+            document.getElementById("loginTab").classList.remove("active");
+
+            document.getElementById("message").textContent = "";
+        }
+
+        // REGISTER A NEW MEMBER
+
+        document.getElementById("registerForm").addEventListener("submit",
+            function(event) {
+
+                event.preventDefault();
+
+                const name = document.getElementById("registerName").value;
+                const email = document.getElementById("registerEmail").value;
+                const password = document.getElementById("registerPassword").value;
+
+                const users = JSON.parse(localStorage.getItem("archiveUsers")) || [];
+
+                const existingUser = users.find(function(user) {
+                    return user.email === email;
+                });
+
+                if (existingUser) {
+                    document.getElementById("message").textContent =
+                        "This email is already registered.";
+                    return;
+                }
+
+                users.push({
+                    name: name,
+                    email: email,
+                    password: password
+                });
+
+                localStorage.setItem("archiveUsers", JSON.stringify(users));
+
+                document.getElementById("registerForm").reset();
+
+                showLogin();
+
+                document.getElementById("message").textContent =
+                    "Membership created! Please sign in.";
+            }
+        );
+
+        // SIGN IN AN EXISTING MEMBER
+
+        document.getElementById("loginForm").addEventListener("submit",
+            function(event) {
+
+                event.preventDefault();
+
+                const email = document.getElementById("loginEmail").value;
+                const password = document.getElementById("loginPassword").value;
+
+                const users = JSON.parse(localStorage.getItem("archiveUsers")) || [];
+
+                const user = users.find(function(item) {
+                    return item.email === email &&
+                           item.password === password;
+                });
+
+                if (user) {
+
+                    localStorage.setItem("currentUser", user.name);
+
+                    showWelcome(user.name);
+
+                } else {
+
+                    document.getElementById("message").textContent =
+                        "Incorrect email or password.";
+
+                }
+
+            }
+        );
+
+        // SHOW WELCOME SCREEN
+
+        function showWelcome(name) {
+
+            document.getElementById("forms").style.display = "none";
+            document.getElementById("welcome").style.display = "block";
+
+            document.getElementById("welcomeName").textContent =
+                "Welcome, " + name + "!";
+
+        }
+
+        // SIGN OUT
+
+        function logout() {
+
+            localStorage.removeItem("currentUser");
+
+            document.getElementById("forms").style.display = "block";
+            document.getElementById("welcome").style.display = "none";
+
+            document.getElementById("loginForm").reset();
+
+            showLogin();
+
+        }
+
+        // CHECK IF SOMEONE IS ALREADY SIGNED IN
+
+        const currentUser = localStorage.getItem("currentUser");
+
+        if (currentUser) {
+            showWelcome(currentUser);
+        }
+
+    </script>
+
+</body>
+</html>

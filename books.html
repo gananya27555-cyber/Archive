@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books | The Archive</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background: #f5f2eb;
+        }
+
+        .shelf-heading {
+            max-width: 1100px;
+            margin: 75px auto 45px;
+            padding: 0 25px;
+        }
+
+        .shelf-heading h1 {
+            font-family: Georgia, serif;
+            font-size: 55px;
+            font-weight: normal;
+            color: #182b59;
+            margin: 15px 0;
+        }
+
+        .shelf-heading p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .library {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 25px 80px;
+        }
+
+        .bookshelf {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 8px;
+            height: 330px;
+            padding: 20px 25px 0;
+            background: #e8dfd1;
+            border-bottom: 18px solid #795438;
+            box-shadow: 0 8px 14px rgba(0,0,0,0.15);
+            margin-bottom: 65px;
+            perspective: 1000px;
+        }
+
+        .book {
+            position: relative;
+            display: block;
+            width: 15%;
+            height: 250px;
+            max-width: 165px;
+            flex-shrink: 1;
+            transform: rotateY(-9deg);
+            transform-origin: left center;
+            transition: 0.3s ease;
+            box-shadow: 5px 3px 7px rgba(0,0,0,0.25);
+        }
+
+        .book img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .book::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 9px;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(0,0,0,0.35),
+                rgba(255,255,255,0.12)
+            );
+            z-index: 2;
+        }
+
+        .book:hover {
+            transform: translateY(-15px) rotateY(-3deg);
+            z-index: 5;
+        }
+
+        .shelf-label {
+            font-family: Georgia, serif;
+            font-size: 20px;
+            color: #785438;
+            margin: 0 0 18px;
+        }
+
+        @media (max-width: 700px) {
+            .shelf-heading h1 {
+                font-size: 38px;
+            }
+
+            .bookshelf {
+                height: 230px;
+                padding: 15px 8px 0;
+                gap: 4px;
+            }
+
+            .book {
+                height: 180px;
+                width: 19%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">THE ARCHIVE.</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#collections">Collections</a>
+            <a href="#">About</a>
+            <a href="my-shelf.html">My Shelf</a>
+        </nav>
+    </header>
+
+    <section class="shelf-heading">
+        <p>THE ARCHIVE / COLLECTION 01</p>
+        <h1>The Book Collection.</h1>
+        <p>Every spine holds a different world.</p>
+    </section>
+
+    <main class="library">
+
+        <p class="shelf-label">01 — Fiction & Classics</p>
+
+        <div class="bookshelf">
+
+            <a href="book-details.html?book=gatsby" class="book">
+                <img src="https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg" alt="The Great Gatsby">
+            </a>
+
+            <a href="book-details.html?book=pride" class="book">
+                <img src="https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg" alt="Pride and Prejudice">
+            </a>
+
+            <a href="book-details.html?book=norwegian" class="book">
+                <img src="https://covers.openlibrary.org/b/isbn/9780375704024-L.jpg" alt="Norwegian Wood">
+            </a>
+
+            <a href="book-details.html?book=alchemist" class="book">
+                <img src="https://covers.openlibrary.org/b/isbn/9780062315007-L.jpg" alt="The Alchemist">
+            </a>
+
+            <a href="book-details.html?book=mockingbird" class="book">
+                <img src="https://covers.openlibrary.org/b/isbn/9780061120084-L.jpg" alt="To Kill a Mockingbird">
+            </a>
+
+        </div>
+
+        <p class="shelf-label">02 — Mystery & Adventure</p>
+
+        <div class="bookshelf">
+
+            <a href="book-details.html?book=mystery" class="book">
+                <img src="https://covers.openlibrary.org/b/isbn/9780062073488-L.jpg" alt="And Then There Were None">
+            </a>
+
+            <a href="book-details.html?book=potter" class="book">
+                <img src="https://covers.openlibrary.org/b/isbn/9780590353427-L.jpg" alt="Harry Potter">
+            </a>
+
+            <a href="book-details.html?book=nineteen" class="book">
+                <img src="https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg" alt="1984">
+            </a>
+
+            <a href="book-details.html?book=hobbit" class="book">
+                <img src="https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg" alt="The Hobbit">
+            </a>
+
+            <a href="book-details.html?book=littlewomen" class="book">
+                <img src="https://covers.openlibrary.org/b/isbn/9780147514011-L.jpg" alt="Little Women">
+            </a>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>THE ARCHIVE. — A place for everything worth remembering.</p>
+    </footer>
+<script src="auth.js"></script>
+</body>
+</html>

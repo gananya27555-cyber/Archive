@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books | The Archive</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="logo">The Archive</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#collections">Collections</a>
+            <a href="#about">About</a>
+            <a href="myshelf.html">My Shelf</a>
+        </nav>
+
+        <a href="login.html" class="login">Sign In</a>
+    </header>
+
+
+    <!-- Page Introduction -->
+    <section class="page-intro">
+
+        <div>
+            <p class="eyebrow">COLLECTION NO. 001 / LITERATURE</p>
+
+            <h1>The Book Collection.</h1>
+
+            <p class="page-description">
+                A collection of stories, ideas, adventures and worlds
+                waiting to be discovered. From timeless classics to
+                modern favourites.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- Search and Filter -->
+    <section class="book-controls">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search books or authors..."
+        >
+
+        <select id="genreFilter">
+            <option value="all">All Genres</option>
+            <option value="fiction">Fiction</option>
+            <option value="fantasy">Fantasy</option>
+            <option value="classic">Classics</option>
+            <option value="mystery">Mystery</option>
+        </select>
+
+        <p id="bookCount">10 BOOKS IN COLLECTION</p>
+
+    </section>
+
+
+    <!-- Books Collection -->
+    <main class="books-container">
+
+        <div class="books-grid" id="booksGrid">
+
+            <!-- Book 1 -->
+            <article class="book-card" data-genre="classic fiction">
+                <div class="book-info">
+                    <h3>The Great Gatsby</h3>
+                    <p>F. Scott Fitzgerald</p>
+                    <span>1925</span>
+                </div>
+
+                <img src="https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg"
+                     alt="The Great Gatsby book cover">
+
+                <p class="book-description">
+                    A story of wealth, love and the American Dream.
+                </p>
+            </article>
+
+
+            <!-- Book 2 -->
+            <article class="book-card" data-genre="classic fiction">
+                <div class="book-info">
+                    <h3>Pride and Prejudice</h3>
+                    <p>Jane Austen</p>
+                    <span>1813</span>
+                </div>
+
+                <img src="https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg"
+                     alt="Pride and Prejudice book cover">
+
+                <p class="book-description">
+                    A classic tale of love, society and first impressions.
+                </p>
+            </article>
+
+
+            <!-- Book 3 -->
+            <article class="book-card" data-genre="fiction">
+                <div class="book-info">
+                    <h3>Norwegian Wood</h3>
+                    <p>Haruki Murakami</p>
+                    <span>1987</span>
+                </div>
+
+                <img src="https://covers.openlibrary.org/b/isbn/9780375704024-L.jpg"
+                     alt="Norwegian Wood book cover">
+
+                <p class="book-description">
+                    A reflective story about memory, youth and love.
+                </p>
+            </article>
+
+
+            <!-- Book 4 -->
+            <article class="book-card" data-genre="fiction">
+                <div class="book-info">
+                    <h3>The Alchemist</h3>
+                    <p>Paulo Coelho</p>
+                    <span>1988</span>
+                </div>
+
+                <img src="https://covers.openlibrary.org/b/isbn/9780062315007-L.jpg"
+                     alt="The Alchemist book cover">
+
+                <p class="book-description">
+                    A journey about dreams and finding one's purpose.
+                </p>
+            </article>
+
+
+            <!-- Book 5 -->
+            <article class="book-card" data-genre="classic mystery">
+                <div class="book-info">
+                    <h3>And Then There Were None</h3>
+                    <p>Agatha Christie</p>
+                    <span>1939</span>
+                </div>
+
+                <img src="https://covers.openlibrary.org/b/isbn/9780062073488-L.jpg"
+                     alt="And Then There Were None book cover">
+
+                <p class="book-description">
+                    Ten strangers find themselves caught in a mystery.
+                </p>
+            </article>
+
+
+            <!-- Book 6 -->
+            <article class="book-card" data-genre="fantasy">
+                <div class="book-info">
+                    <h3>Harry Potter</h3>
+                    <p>J. K. Rowling</p>
+                    <span>1997</span>
+                </div>
+
+                <img src="https://covers.openlibrary.org/b/isbn/9780590353427-L.jpg"
+                     alt="Harry Potter book cover">
+
+                <p class="book-description">
+                    A young wizard discovers a world of magic.
+                </p>
+            </article>
+
+
+            <!-- Book 7 -->
+            <article class="book-card" data-genre="classic fiction">
+                <div class="book-info">
+                    <h3>1984</h3>
+                    <p>George Orwell</p>
+                    <span>1949</span>
+                </div>
+
+                <img src="https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg"
+                     alt="1984 book cover">
+
+                <p class="book-description">
+                    A dystopian novel about power and surveillance.
+                </p>
+            </article>
+
+
+            <!-- Book 8 -->
+            <article class="book-card" data-genre="fiction">
+                <div class="book-info">
+                    <h3>Little Women</h3>
+                    <p>Louisa May Alcott</p>
+                    <span>1868</span>
+                </div>
+
+                <img src="https://covers.openlibrary.org/b/isbn/9780147514011-L.jpg"
+                     alt="Little Women book cover">
+
+                <p class="book-description">
+                    Four sisters navigate life, family and growing up.
+                </p>
+            </article>
+
+
+            <!-- Book 9 -->
+            <article class="book-card" data-genre="fantasy fiction">
+                <div class="book-info">
+                    <h3>The Hobbit</h3>
+                    <p>J. R. R. Tolkien</p>
+                    <span>1937</span>
+                </div>
+
+                <img src="https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg"
+                     alt="The Hobbit book cover">
+
+                <p class="book-description">
+                    An unexpected adventure through Middle-earth.
+                </p>
+            </article>
+
+
+            <!-- Book 10 -->
+            <article class="book-card" data-genre="classic fiction">
+                <div class="book-info">
+                    <h3>To Kill a Mockingbird</h3>
+                    <p>Harper Lee</p>
+                    <span>1960</span>
+                </div>
+
+                <img src="https://covers.openlibrary.org/b/isbn/9780061120084-L.jpg"
+                     alt="To Kill a Mockingbird book cover">
+
+                <p class="book-description">
+                    A story of childhood, justice and human dignity.
+                </p>
+            </article>
+
+        </div>
+
+        <p id="noResults">No books found. Try another search.</p>
+
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <button id="prevPage">Previous</button>
+            <span id="pageNumber">1 / 2</span>
+            <button id="nextPage">Next</button>
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="bottom-text">
+        <p>THE ARCHIVE © 2026</p>
+        <p>A COLLECTION OF STORIES & CULTURE</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

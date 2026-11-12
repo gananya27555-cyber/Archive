@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Archive | Video Games</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #f5f2eb;
+        }
+
+        .page-heading {
+            text-align: center;
+            margin: 40px 0;
+            color: #26354a;
+            font-family: Georgia, serif;
+        }
+
+        .shelf {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    gap: 20px;
+    max-width: 1100px;
+    min-height: 310px;
+    margin: 40px auto;
+    padding: 35px 15px 0;
+    background: #e8dfd1;
+    border-bottom: 16px solid #806044;
+    box-shadow: 0 5px 8px rgba(0,0,0,0.15);
+}
+
+        .game {
+            width: 170px;
+            text-align: center;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #26354a;
+        }
+
+        .game img {
+            width: 150px;
+            height: 210px;
+            object-fit: cover;
+            box-shadow: 3px 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .game img:hover {
+            transform: translateY(-8px);
+        }
+
+        .game p {
+            font-family: Georgia, serif;
+            font-size: 14px;
+        }
+
+        @media (max-width: 900px) {
+            .shelf {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#collections">Collections</a>
+    <a href="games.html">Video Games</a>
+    <a href="my-shelf.html">My Shelf</a>
+    <a href="signin.html">Sign In</a>
+</nav>
+
+<h1 class="page-heading">The Game Collection.</h1>
+
+<div class="shelf">
+
+    <a href="game-details.html?game=minecraft" class="game">
+        <img src="minecraft.jpg" alt="Minecraft">
+        <p>Minecraft</p>
+    </a>
+
+    <a href="game-details.html?game=zelda" class="game">
+        <img src="zelda.jpg" alt="Zelda">
+        <p>The Legend of Zelda</p>
+    </a>
+
+    <a href="game-details.html?game=supermario" class="game">
+        <img src="mario.jpg" alt="Super Mario">
+        <p>Super Mario</p>
+    </a>
+
+    <a href="game-details.html?game=gtav" class="game">
+        <img src="gta.jpg" alt="GTA V">
+        <p>Grand Theft Auto V</p>
+    </a>
+
+    <a href="game-details.html?game=stardew" class="game">
+        <img src="stardew.jpg" alt="Stardew Valley">
+        <p>Stardew Valley</p>
+    </a>
+
+</div>
+
+<div class="shelf">
+
+    <a href="game-details.html?game=portal" class="game">
+        <img src="portal.jpg" alt="Portal">
+        <p>Portal</p>
+    </a>
+
+    <a href="game-details.html?game=reddead" class="game">
+        <img src="redead.jpg" alt="Red Dead Redemption">
+        <p>Red Dead Redemption</p>
+    </a>
+
+    <a href="game-details.html?game=thelastofus" class="game">
+        <img src="thelastofus.jpg" alt="The Last of Us">
+        <p>The Last of Us</p>
+    </a>
+
+    <a href="game-details.html?game=undertale" class="game">
+        <img src="undertale.jpg" alt="Undertale">
+        <p>Undertale</p>
+    </a>
+
+    <a href="game-details.html?game=lifeisstrange" class="game">
+        <img src="lifeisstrange.jpg" alt="Life is Strange">
+        <p>Life is Strange</p>
+    </a>
+
+</div>
+
+<footer>
+    THE ARCHIVE. — A place for everything worth remembering.
+</footer>
+<script src="auth.js"></script>
+</body>
+</html>

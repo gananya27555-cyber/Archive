@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Archive | Movies</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #f5f2eb;
+        }
+
+        .shelf-heading {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .shelf-heading h1 {
+            font-family: Georgia, serif;
+            color: #26354a;
+        }
+
+        .bookshelf {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 20px;
+            padding: 30px 25px 15px;
+            margin: 30px auto;
+            max-width: 1200px;
+            height: 330px;
+            background: #e8dfd1;
+            border-bottom: 18px solid #806044;
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .movie {
+            width: 17%;
+            max-width: 175px;
+            height: 250px;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .movie img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: 3px 4px 8px rgba(0,0,0,0.25);
+        }
+
+        .movie:hover {
+            transform: translateY(-12px);
+        }
+
+        @media (max-width: 750px) {
+            .bookshelf {
+                height: auto;
+                flex-wrap: wrap;
+            }
+
+            .movie {
+                width: 28%;
+            }
+        }
+       .movie-filters {
+    text-align: center;
+    margin: 20px auto 35px;
+}
+
+.movie-filters button {
+    padding: 10px 18px;
+    margin: 5px;
+    border: 1px solid #806044;
+    background: #e8dfd1;
+    color: #26354a;
+    font-family: Georgia, serif;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.movie-filters button:hover,
+.movie-filters button.active {
+    background: #26354a;
+    color: white;
+}
+
+.movie.hidden {
+    display: none;
+} 
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#collections">Collections</a>
+        <a href="#">About</a>
+        <a href="my-shelf.html">My Shelf</a>
+        <<a href="signin.html">Sign In</a>
+    </nav>
+
+    <section class="shelf-heading">
+        <h1>The Movie Collection.</h1>
+        <p>A collection of stories worth watching again.</p>
+        <div class="movie-filters">
+    <button class="active" onclick="filterMovies('all', this)">All Movies</button>
+    <button onclick="filterMovies('scifi', this)">Sci-Fi</button>
+    <button onclick="filterMovies('action', this)">Action & Adventure</button>
+    <button onclick="filterMovies('drama', this)">Drama & Romance</button>
+    <button onclick="filterMovies('crime', this)">Crime & Comedy</button>
+    <button onclick="filterMovies('animation', this)">Animation</button>
+</div>
+    </section>
+
+    <div class="bookshelf">
+
+        <a href="movie-details.html?movie=interstellar" class="movie" data-genre="scifi">
+            <img src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="Interstellar">
+        </a>
+
+        <a href="movie-details.html?movie=darkknight" class="movie" data-genre="action">
+            <img src="https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" alt="The Dark Knight">
+        </a>
+
+        <a href="movie-details.html?movie=inception" class="movie" data-genre="scifi">
+            <img src="https://image.tmdb.org/t/p/w500/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg" alt="Inception">
+        </a>
+
+        <a href="movie-details.html?movie=titanic" class="movie" data-genre="drama">
+            <img src="https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg" alt="Titanic">
+        </a>
+
+        <a href="movie-details.html?movie=jurassic" class="movie" data-genre="scifi">
+            <img src="https://image.tmdb.org/t/p/w500/b1xCNnyrPebIc7EWNZIa6jhb1Ww.jpg" alt="Jurassic Park">
+        </a>
+
+    </div>
+
+    <div class="bookshelf">
+
+        <a href="movie-details.html?movie=matrix" class="movie" data-genre="scifi">
+            <img src="https://image.tmdb.org/t/p/w500/p96dm7sCMn4VYAStA6siNz30G1r.jpg" alt="The Matrix">
+        </a>
+
+        <a href="movie-details.html?movie=pulpfiction" class="movie" data-genre="crime">
+            <img src="https://image.tmdb.org/t/p/w500/vQWk5YBFWF4bZaofAbv0tShwBvQ.jpg" alt="Pulp Fiction">
+        </a>
+
+        <a href="movie-details.html?movie=grandbudapest" class="movie" data-genre="drama">
+            <img src="https://image.tmdb.org/t/p/w500/eWdyYQreja6JGCzqHWXpWHDrrPo.jpg" alt="The Grand Budapest Hotel">
+        </a>
+
+        <a href="movie-details.html?movie=spiderman" class="movie" data-genre="animation">
+            <img src="https://image.tmdb.org/t/p/w500/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg" alt="Spider-Man: Into the Spider-Verse">
+        </a>
+
+        <a href="movie-details.html?movie=laland" class="movie" data-genre="drama">
+            <img src="https://image.tmdb.org/t/p/w500/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg" alt="La La Land">
+        </a>
+
+    </div>
+
+    <footer>
+        THE ARCHIVE. — A place for everything worth remembering.
+    </footer>
+<script>
+function filterMovies(genre, button) {
+
+    var movies = document.querySelectorAll(".movie");
+
+    movies.forEach(function(movie) {
+
+        if (genre === "all" ||
+            movie.getAttribute("data-genre") === genre) {
+
+            movie.classList.remove("hidden");
+
+        } else {
+
+            movie.classList.add("hidden");
+
+        }
+
+    });
+
+    var buttons = document.querySelectorAll(".movie-filters button");
+
+    buttons.forEach(function(btn) {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+}
+</script>
+<script src="auth.js"></script>
+</body>
+</html>

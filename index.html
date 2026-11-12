@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Archive</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* NAVIGATION */
+
+        header {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            gap: 25px !important;
+            padding: 25px 35px !important;
+            box-sizing: border-box;
+            flex-wrap: nowrap !important;
+        }
+
+        header .logo {
+            flex-shrink: 0;
+            white-space: nowrap;
+            margin: 0;
+        }
+
+        header nav {
+            display: flex !important;
+            align-items: center;
+            gap: 22px !important;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+
+        header nav a {
+            white-space: nowrap;
+        }
+
+        /* SEARCH BAR */
+
+        .search-area {
+            flex: 1 1 350px;
+            min-width: 250px;
+            max-width: 390px;
+            margin: 0 auto !important;
+            text-align: center;
+            position: relative;
+        }
+
+        .search-area h2 {
+            font-size: 20px !important;
+            line-height: 1.3;
+            margin: 0 0 10px !important;
+            white-space: nowrap;
+        }
+
+        .search-area input {
+            width: calc(100% - 78px);
+            min-width: 0;
+            box-sizing: border-box;
+        }
+
+        .search-area button {
+            white-space: nowrap;
+        }
+
+        #searchResults {
+            position: absolute;
+            z-index: 100;
+            background: #f5f2eb;
+            width: 100%;
+            max-width: 390px;
+            text-align: left;
+        }
+
+        /* SIGN IN BUTTON */
+
+        .signin-link {
+            flex-shrink: 0;
+            white-space: nowrap;
+            display: inline-block;
+            padding: 9px 24px;
+            border: 1.5px solid #182b59;
+            border-radius: 50px;
+            color: #182b59;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .signin-link:hover {
+            background: #182b59;
+            color: #f5f2eb;
+        }
+
+        /* SMALLER SCREENS */
+
+        @media (max-width: 1050px) {
+            header {
+                flex-wrap: wrap !important;
+            }
+
+            .search-area {
+                order: 4;
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            .search-area h2 {
+                white-space: normal;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header>
+
+        <div class="logo">The Archive</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#collections">Collections</a>
+            <a href="#about">About</a>
+            <a href="my-shelf.html">My Shelf</a>
+        </nav>
+
+        <!-- SEARCH -->
+
+        <div class="search-area">
+
+            <h2>Find Something in The Archive</h2>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search books, movies, comics, music..."
+            >
+
+            <button onclick="searchArchive()">Search</button>
+
+            <div id="searchResults"></div>
+
+        </div>
+
+        <!-- SIGN IN -->
+
+        <a href="signin.html" class="signin-link">Sign In</a>
+
+    </header>
+
+
+    <!-- INTRODUCTION -->
+
+    <section class="intro">
+
+        <div class="heading">
+            <h1>Every Story<br>Has A Place.</h1>
+        </div>
+
+        <div class="about" id="about">
+
+            <p class="small-heading">ABOUT THE ARCHIVE</p>
+
+            <p>
+                A digital home for everything worth discovering.
+                Explore a growing collection of books, movies,
+                anime, television, music and more.
+                Every story has a place here.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORY LABELS -->
+
+    <section class="labels">
+
+        <span>Digital Library</span>
+        <span>Explore Collections</span>
+
+        <a href="#collections">Explore All ↗</a>
+
+    </section>
+
+
+    <!-- COLLECTIONS -->
+
+    <section class="collection-box" id="collections">
+
+        <div class="collection-top">
+            <h2>Explore the Archive</h2>
+            <p>Choose a collection to begin.</p>
+        </div>
+
+
+        <div class="category-grid">
+
+
+            <!-- BOOKS -->
+
+            <a href="books.html" class="category"
+               style="display:flex; flex-direction:column; align-items:center; text-decoration:none;">
+
+                <div class="folder folder-books"
+                     style="width:100%; max-width:150px; height:150px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto 15px;">
+
+                    <img src="books.png"
+                         style="width:100%; height:100%; object-fit:contain;">
+
+                    <span style="font-size:11px; color:#000;">BOOKS</span>
+                    <small style="font-size:9px; color:#666;">READING NOW</small>
+
+                </div>
+
+                <p style="margin:0; text-align:center;">01 — BOOKS</p>
+
+            </a>
+
+
+            <!-- MOVIES -->
+
+            <a href="movies.html" class="category"
+               style="display:flex; flex-direction:column; align-items:center; text-decoration:none;">
+
+                <div class="folder folder-movies"
+                     style="width:100%; max-width:150px; height:150px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto 15px;">
+
+                    <img src="vhs.png"
+                         style="width:100%; height:100%; object-fit:contain;">
+
+                    <span style="font-size:11px; color:#000;">MOVIES</span>
+                    <small style="font-size:9px; color:#666;">WATCHLIST</small>
+
+                </div>
+
+                <p style="margin:0; text-align:center;">02 — MOVIES</p>
+
+            </a>
+
+
+            <!-- ANIME & MANGA -->
+
+            <a href="anime.html" class="category"
+               style="display:flex; flex-direction:column; align-items:center; text-decoration:none;">
+
+                <div class="folder folder-anime"
+                     style="width:100%; max-width:150px; height:150px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto 15px;">
+
+                    <img src="manga.png"
+                         style="width:100%; height:100%; object-fit:contain;">
+
+                    <span style="font-size:11px; color:#000;">ANIME & MANGA</span>
+                    <small style="font-size:9px; color:#666;">CURRENTLY WATCHING</small>
+
+                </div>
+
+                <p style="margin:0; text-align:center;">03 — ANIME & MANGA</p>
+
+            </a>
+
+
+            <!-- TV SHOWS -->
+
+            <a href="tv.html" class="category"
+               style="display:flex; flex-direction:column; align-items:center; text-decoration:none;">
+
+                <div class="folder folder-tv"
+                     style="width:100%; max-width:150px; height:150px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto 15px;">
+
+                    <img src="tv.png"
+                         style="width:100%; height:100%; object-fit:contain;">
+
+                    <span style="font-size:11px; color:#000;">TV SHOWS</span>
+                    <small style="font-size:9px; color:#666;">ON AIR</small>
+
+                </div>
+
+                <p style="margin:0; text-align:center;">04 — TV SHOWS</p>
+
+            </a>
+
+
+            <!-- COMICS -->
+
+            <a href="comics.html" class="category"
+               style="display:flex; flex-direction:column; align-items:center; text-decoration:none;">
+
+                <div class="folder folder-comics"
+                     style="width:100%; max-width:150px; height:150px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto 15px;">
+
+                    <img src="comic.png"
+                         style="width:140%; height:140%; object-fit:contain;">
+
+                    <span style="font-size:11px; color:#000;">COMICS</span>
+                    <small style="font-size:9px; color:#666;">MY COLLECTION</small>
+
+                </div>
+
+                <p style="margin:0; text-align:center;">05 — COMICS</p>
+
+            </a>
+
+
+            <!-- VIDEO GAMES -->
+
+            <a href="games.html" class="category"
+               style="display:flex; flex-direction:column; align-items:center; text-decoration:none;">
+
+                <div class="folder folder-games"
+                     style="width:100%; max-width:150px; height:150px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto 15px;">
+
+                    <img src="game.jpg"
+                         style="width:85%; height:85%; object-fit:contain;">
+
+                    <span style="font-size:11px; color:#000;">VIDEO GAMES</span>
+                    <small style="font-size:9px; color:#666;">PLAYING NOW</small>
+
+                </div>
+
+                <p style="margin:0; text-align:center;">06 — VIDEO GAMES</p>
+
+            </a>
+
+
+            <!-- MUSIC ALBUMS -->
+
+            <a href="music.html" class="category"
+               style="display:flex; flex-direction:column; align-items:center; text-decoration:none;">
+
+                <div class="folder folder-music"
+                     style="width:100%; max-width:150px; height:150px; display:flex; flex-direction:column; align-items:center; justify-content:center; margin:0 auto 15px;">
+
+                    <img src="music.png"
+                         style="width:150%; height:150%; object-fit:contain;">
+
+                    <span style="font-size:11px; color:#000;">MUSIC ALBUMS</span>
+                    <small style="font-size:9px; color:#666;">RECENTLY PLAYED</small>
+
+                </div>
+
+                <p style="margin:0; text-align:center;">07 — MUSIC ALBUMS</p>
+
+            </a>
+
+
+        </div>
+
+
+        <!-- BOTTOM TEXT -->
+
+        <div class="bottom-text">
+
+            <p>THE ARCHIVE © 2026</p>
+            <p>A COLLECTION OF STORIES & CULTURE</p>
+
+        </div>
+
+    </section>
+
+
+    <script src="search.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
+

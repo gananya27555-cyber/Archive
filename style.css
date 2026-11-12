@@ -1,0 +1,749 @@
+
+/* =================================
+   THE ARCHIVE
+   Main Website Styling
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+    color: #202020;
+    font-family: Arial, sans-serif;
+    padding: 25px 35px;
+}
+
+
+/* =================================
+   NAVIGATION
+================================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: #17178e;
+    letter-spacing: -1.5px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #252525;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #17178e;
+}
+
+.login {
+    background: #17178e;
+    color: white;
+    text-decoration: none;
+    padding: 13px 27px;
+    border-radius: 30px;
+}
+
+
+/* =================================
+   HOMEPAGE NAVIGATION FIX
+================================= */
+
+body > header {
+    display: grid;
+    grid-template-columns: max-content max-content minmax(250px, 1fr) max-content;
+    align-items: center;
+    gap: 25px;
+    padding: 15px 10px;
+}
+
+body > header .logo {
+    white-space: nowrap;
+}
+
+body > header nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    white-space: nowrap;
+}
+
+body > header nav a {
+    white-space: nowrap;
+}
+
+/* SIGN IN PILL */
+
+.signin-link {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1.5px solid #182b59;
+    border-radius: 50px;
+    color: #182b59;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.3s;
+}
+
+.signin-link:hover {
+    background: #182b59;
+    color: #f5f2eb;
+}
+
+
+/* =================================
+   SEARCH BAR
+================================= */
+
+.search-area {
+    width: 100%;
+    max-width: 390px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    position: relative;
+}
+
+.search-area h2 {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.3;
+    color: #26354a;
+    margin: 0 0 10px;
+    white-space: nowrap;
+}
+
+.search-area input {
+    width: calc(100% - 78px);
+    padding: 11px;
+    border: 1px solid #806044;
+    background: #fffdf8;
+    font-size: 13px;
+}
+
+.search-area button {
+    padding: 11px 15px;
+    background: #26354a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+#searchResults {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-width: 390px;
+    margin: 10px auto;
+    text-align: left;
+    background: #f5f2eb;
+    z-index: 100;
+}
+
+.search-result {
+    padding: 12px;
+    margin: 8px 0;
+    background: #e8dfd1;
+    border-bottom: 1px solid #806044;
+}
+
+.search-result a {
+    color: #26354a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.search-result p {
+    margin: 5px 0;
+    color: #514638;
+}
+
+
+/* =================================
+   HERO SECTION
+================================= */
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 55px;
+    margin-bottom: 45px;
+}
+
+.heading h1 {
+    font-family: Georgia, serif;
+    font-size: 65px;
+    font-weight: normal;
+    line-height: 1.05;
+    letter-spacing: -3px;
+    color: #17178e;
+}
+
+.about {
+    max-width: 480px;
+    padding-top: 10px;
+}
+
+.small-heading {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #888;
+    margin-bottom: 25px;
+}
+
+.about p:last-child {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #444;
+}
+
+
+/* =================================
+   COLLECTION LABELS
+================================= */
+
+.labels {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.labels span {
+    border: 1px solid #17178e;
+    color: #17178e;
+    padding: 9px 17px;
+    border-radius: 25px;
+    font-size: 12px;
+}
+
+.labels a {
+    margin-left: auto;
+    color: #17178e;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+/* =================================
+   COLLECTION CONTAINER
+================================= */
+
+.collection-box {
+    background: #f5f4f0;
+    padding: 40px;
+    border-radius: 5px;
+}
+
+.collection-top {
+    margin-bottom: 45px;
+}
+
+.collection-top h2 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: normal;
+    color: #222;
+}
+
+.collection-top p {
+    font-size: 13px;
+    color: #888;
+    margin-top: 10px;
+}
+
+
+/* =================================
+   CATEGORY GRID
+================================= */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 45px 30px;
+}
+
+.category {
+    display: block;
+    text-decoration: none;
+    color: #222;
+}
+
+
+/* =================================
+   IMAGE-BASED FOLDERS
+================================= */
+
+.folder {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.folder span,
+.folder small {
+    display: none;
+}
+
+.category:hover .folder {
+    transform: translateY(-7px) scale(1.04);
+}
+
+
+/* =================================
+   CATEGORY LABELS
+================================= */
+
+.category p {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: #555;
+    margin-top: 15px;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.bottom-text {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    margin-top: 50px;
+    color: #888;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+
+/* =================================
+   CATEGORY PAGE INTRO
+================================= */
+
+.page-intro {
+    max-width: 1100px;
+    margin: 90px auto 45px;
+    padding: 0 30px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #777;
+    margin-bottom: 22px;
+}
+
+.page-intro h1 {
+    font-family: Georgia, serif;
+    font-size: 58px;
+    font-weight: normal;
+    color: #182b59;
+    margin: 15px 0;
+    letter-spacing: -2px;
+}
+
+.page-description {
+    color: #777;
+    font-size: 15px;
+    max-width: 500px;
+    line-height: 1.7;
+}
+
+
+/* =================================
+   SEARCH AND FILTER CONTROLS
+================================= */
+
+.book-controls {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.book-controls input,
+.book-controls select {
+    padding: 13px 16px;
+    border: 1px solid #ddd;
+    background: white;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+}
+
+.book-controls input {
+    width: 70%;
+}
+
+.book-controls input:focus,
+.book-controls select:focus {
+    border-color: #17178e;
+}
+
+.book-controls p {
+    margin-left: auto;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #888;
+}
+
+
+/* =================================
+   BOOK GRID
+================================= */
+
+.books-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 30px;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: 23px;
+    row-gap: 48px;
+}
+
+.book-card {
+    min-width: 0;
+    cursor: pointer;
+}
+
+.book-info {
+    min-height: 82px;
+    margin-bottom: 10px;
+}
+
+.book-info h3 {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.4;
+    margin: 13px 0 6px;
+    color: #182b59;
+}
+
+.book-info p {
+    font-size: 11px;
+    line-height: 1.6;
+    color: #777;
+    margin: 5px 0;
+}
+
+.book-info span {
+    font-size: 12px;
+    color: #999;
+}
+
+.book-card img {
+    display: block;
+    width: 100%;
+    height: 245px;
+    object-fit: contain;
+    object-position: left center;
+    background: #f5f3ef;
+    transition: 0.3s ease;
+}
+
+.book-card:hover img {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px #00000020;
+}
+
+.book-description {
+    font-size: 12px;
+    line-height: 1.5;
+    color: #999;
+    margin-top: 13px;
+}
+
+
+/* =================================
+   PAGINATION
+================================= */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin: 60px 0;
+}
+
+.pagination button {
+    padding: 10px 18px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.pagination button:hover {
+    background: #17178e;
+    color: white;
+}
+
+.pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    font-size: 13px;
+    color: #555;
+}
+
+#noResults {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    color: #888;
+}
+
+
+/* =================================
+   REVIEW SECTION
+================================= */
+
+.review-section {
+    max-width: 1000px;
+    margin: 0 auto 80px;
+    padding: 40px;
+    background: #e8dfd1;
+}
+
+.review-section h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: normal;
+    color: #182b59;
+    margin-bottom: 10px;
+}
+
+.review-section p {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.review-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    width: fit-content;
+}
+
+.stars input {
+    display: none;
+}
+
+.stars label {
+    font-size: 32px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.stars label:hover,
+.stars label:hover ~ label,
+.stars input:checked ~ label {
+    color: #b58a3c;
+}
+
+.review-section textarea {
+    padding: 15px;
+    border: 1px solid #c9bda9;
+    background: #f5f2eb;
+    font-family: Georgia, serif;
+    resize: vertical;
+}
+
+.review-section button {
+    width: fit-content;
+    padding: 12px 25px;
+    background: #182b59;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#message {
+    margin-top: 10px;
+    color: #38583c;
+}
+
+#reviewDisplay {
+    margin-top: 35px;
+    border-top: 1px solid #c9bda9;
+    padding-top: 20px;
+}
+
+#reviewDisplay h3 {
+    font-family: Georgia, serif;
+    color: #182b59;
+    font-size: 23px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.saved-review {
+    background: #f5f2eb;
+    padding: 15px;
+    margin-bottom: 12px;
+}
+
+.saved-review p {
+    margin: 8px 0;
+}
+
+
+/* =================================
+   CATEGORY PAGE RESPONSIVENESS
+================================= */
+
+@media (max-width: 900px) {
+    .books-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 750px) {
+
+    body {
+        padding: 15px;
+    }
+
+    body > header {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    body > header nav {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    body > header .search-area {
+        order: 4;
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .search-area h2 {
+        white-space: normal;
+    }
+
+    .intro {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .heading h1 {
+        font-size: 45px;
+    }
+
+    .collection-box {
+        padding: 20px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 15px;
+    }
+
+    .folder {
+        height: 130px;
+    }
+
+    .bottom-text {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .page-intro {
+        margin: 40px 10px;
+        padding: 0;
+    }
+
+    .page-intro h1 {
+        font-size: 38px;
+    }
+
+    .page-description {
+        font-size: 18px;
+    }
+
+    .book-controls {
+        margin: 0 10px 25px;
+        padding: 0;
+        flex-wrap: wrap;
+    }
+
+    .book-controls input {
+        width: 100%;
+    }
+
+    .book-controls p {
+        margin-left: 0;
+    }
+
+    .books-container {
+        margin: 0 10px;
+        padding: 0;
+    }
+
+    .books-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px 15px;
+    }
+
+    .book-card img {
+        height: 190px;
+    }
+}
+
+@media (max-width: 600px) {
+    .review-section {
+        padding: 20px;
+    }
+}

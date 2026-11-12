@@ -1,0 +1,360 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Archive | Game Details</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        body {
+            background: #f5f2eb;
+        }
+
+        /* HEADER */
+
+        body > header.detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px 35px;
+        }
+
+        .detail-header nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        .detail-header nav a {
+            text-decoration: none;
+            color: #202020;
+        }
+
+        /* COLLECTION INTRO */
+
+        .game-intro {
+            max-width: 1100px;
+            margin: 75px auto 45px;
+            padding: 0 25px;
+        }
+
+        .game-intro .eyebrow {
+            color: #806044;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 18px;
+        }
+
+        .game-intro h1 {
+            font-family: Georgia, serif;
+            font-size: 55px;
+            color: #182b59;
+            margin-bottom: 15px;
+        }
+
+        .game-intro .subtitle {
+            font-family: Georgia, serif;
+            font-size: 19px;
+            color: #665d52;
+        }
+
+        /* GAME DETAILS */
+
+        .detail-container {
+            max-width: 1000px;
+            margin: 0 auto 70px;
+            padding: 35px;
+            display: flex;
+            align-items: center;
+            gap: 45px;
+            background: #e8dfd1;
+            border: 1px solid #c5b69f;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .detail-container img {
+            width: 280px;
+            height: 390px;
+            object-fit: cover;
+            display: block;
+            box-shadow: 5px 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .detail-info {
+            flex: 1;
+        }
+
+        .detail-info h2 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            color: #182b59;
+            margin-bottom: 20px;
+        }
+
+        .detail-info p {
+            margin: 14px 0;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .shelf-button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #182b59;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-family: Georgia, serif;
+            font-size: 15px;
+        }
+
+        .shelf-button:hover {
+            background: #806044;
+        }
+
+        /* REVIEWS */
+
+        .review-section {
+            max-width: 850px;
+            margin: 50px auto 80px;
+            padding: 30px;
+            background: #eee9df;
+            border: 1px solid #c5b69f;
+        }
+
+        .review-section h2 {
+            font-family: Georgia, serif;
+            color: #182b59;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .review-section p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* CLICKABLE STAR RATING */
+
+        .stars {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            width: fit-content;
+            margin: 10px 0 20px;
+        }
+
+        .stars input {
+            display: none;
+        }
+
+        .stars label {
+            font-size: 32px;
+            color: #aaa;
+            cursor: pointer;
+            padding: 2px;
+        }
+
+        .stars input:checked ~ label,
+        .stars label:hover,
+        .stars label:hover ~ label {
+            color: #c28b35;
+        }
+
+        .review-section textarea {
+            width: 100%;
+            min-height: 110px;
+            padding: 12px;
+            margin-top: 10px;
+            font-family: Arial, sans-serif;
+            border: 1px solid #c5b69f;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+
+        .review-submit {
+            padding: 11px 24px;
+            background: #182b59;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 12px;
+        }
+
+        .saved-review {
+            background: #e8dfd1;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #806044;
+        }
+
+        #message {
+            margin-top: 12px;
+            color: #182b59;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            body > header.detail-header {
+                padding: 15px;
+            }
+
+            .game-intro {
+                margin: 45px auto 30px;
+            }
+
+            .game-intro h1 {
+                font-size: 38px;
+            }
+
+            .detail-container {
+                flex-direction: column;
+                margin: 20px 15px 45px;
+                padding: 20px;
+            }
+
+            .detail-container img {
+                width: 220px;
+                height: 310px;
+            }
+
+            .detail-info h2 {
+                font-size: 30px;
+            }
+
+            .review-section {
+                margin: 25px 15px;
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header class="detail-header">
+
+        <div class="logo">The Archive</div>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="games.html">Games</a>
+            <a href="my-shelf.html">My Shelf</a>
+        </nav>
+
+        <a href="signin.html" class="signin-link">Sign In</a>
+
+    </header>
+
+
+    <!-- COLLECTION INTRO -->
+
+    <section class="game-intro">
+
+        <p class="eyebrow">THE ARCHIVE / GAME COLLECTION</p>
+
+        <h1># Inside the Game.</h1>
+
+        <p class="subtitle">
+            A little more about the world.
+        </p>
+
+    </section>
+
+
+    <!-- GAME INFORMATION -->
+
+    <main class="detail-container">
+
+        <img id="cover" src="minecraft.jpg" alt="Game Cover">
+
+        <div class="detail-info">
+
+            <h2 id="title">Minecraft</h2>
+
+            <p id="developer"></p>
+
+            <p id="genre"></p>
+
+            <p id="year"></p>
+
+            <p id="description"></p>
+
+            <button class="shelf-button" onclick="saveToShelf()">
+                + Add to My Shelf
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- PLAYER REVIEWS -->
+
+    <section class="review-section">
+
+        <h2>Player's Corner.</h2>
+
+        <p>Share your thoughts about this game.</p>
+
+        <form id="reviewForm">
+
+            <p>Give your rating:</p>
+
+            <div class="stars">
+
+                <input type="radio" name="rating" id="star5" value="5">
+                <label for="star5">★</label>
+
+                <input type="radio" name="rating" id="star4" value="4">
+                <label for="star4">★</label>
+
+                <input type="radio" name="rating" id="star3" value="3">
+                <label for="star3">★</label>
+
+                <input type="radio" name="rating" id="star2" value="2">
+                <label for="star2">★</label>
+
+                <input type="radio" name="rating" id="star1" value="1">
+                <label for="star1">★</label>
+
+            </div>
+
+            <textarea
+                id="review"
+                placeholder="Write your review here..."
+                required
+            ></textarea>
+
+            <button class="review-submit" type="submit">
+                Submit Review
+            </button>
+
+            <p id="message"></p>
+
+        </form>
+
+        <div id="reviewDisplay"></div>
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="game-details.js"></script>
+
+</body>
+</html>
