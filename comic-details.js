@@ -7,7 +7,7 @@ var comics = {
         writer: "Frank Miller",
         genre: "Superhero / Crime",
         year: "1987",
-        cover: "images/batman-year-one.jpg",
+        cover: "batman.jpg",
         description: "A retelling of Batman's early days in Gotham City, following Bruce Wayne as he begins his journey as a crime fighter."
     },
 
@@ -17,7 +17,7 @@ var comics = {
         writer: "Alan Moore",
         genre: "Superhero / Mystery",
         year: "1986",
-        cover: "images/watchmen.jpg",
+        cover: "watchmen.jpg",
         description: "A story set in an alternate world where retired superheroes become involved in a mysterious investigation."
     },
 
@@ -27,7 +27,7 @@ var comics = {
         writer: "Alan Moore",
         genre: "Superhero / Psychological",
         year: "1988",
-        cover: "images/killing-joke.jpg",
+        cover: "joke.jpg",
         description: "A famous Batman and Joker story that explores their complicated rivalry and contrasting views of the world."
     },
 
@@ -37,7 +37,7 @@ var comics = {
         writer: "Jeph Loeb",
         genre: "Superhero / Drama",
         year: "2002",
-        cover: "images/spider-man-blue.jpg",
+        cover: "blue.jpg",
         description: "Peter Parker looks back on his early days as Spider-Man and remembers the people who shaped his life."
     },
 
@@ -47,7 +47,7 @@ var comics = {
         writer: "Mark Millar",
         genre: "Superhero / Action",
         year: "2006",
-        cover: "images/civil-war.jpg",
+        cover: "america.jpg",
         description: "A major Marvel storyline in which superheroes disagree over government registration and become divided into opposing sides."
     },
 
@@ -57,7 +57,7 @@ var comics = {
         writer: "Jim Starlin",
         genre: "Superhero / Science Fiction",
         year: "1991",
-        cover: "images/infinity-gauntlet.jpg",
+        cover: "infinity.jpg",
         description: "Thanos gains immense power through the Infinity Gems, leading Earth's heroes into a battle to protect the universe."
     },
 
@@ -67,7 +67,7 @@ var comics = {
         writer: "Mark Millar",
         genre: "Superhero / Alternate History",
         year: "2003",
-        cover: "images/superman-red-son.jpg",
+        cover: "redson.jpg",
         description: "An alternate take on Superman that imagines what might happen if his spaceship landed in the Soviet Union."
     },
 
@@ -77,7 +77,7 @@ var comics = {
         writer: "Neil Gaiman",
         genre: "Fantasy / Dark Fantasy",
         year: "1989",
-        cover: "images/sandman.jpg",
+        cover: "sand.jpg",
         description: "The first collection in The Sandman series, introducing Dream and his journey to recover what he has lost."
     },
 
@@ -87,7 +87,7 @@ var comics = {
         writer: "Alan Moore",
         genre: "Dystopian / Political Fiction",
         year: "1988",
-        cover: "images/v-for-vendetta.jpg",
+        cover: "ven.jpg",
         description: "A dystopian story set in a future Britain under an authoritarian government, following a mysterious masked figure."
     },
 
@@ -97,7 +97,7 @@ var comics = {
         writer: "Chris Claremont",
         genre: "Superhero / Science Fiction",
         year: "1981",
-        cover: "images/days-of-future-past.jpg",
+        cover: "xmen.jpg",
         description: "A classic X-Men storyline that explores a future where mutants face persecution and the team tries to change history."
     }
 
