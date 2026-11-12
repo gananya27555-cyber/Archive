@@ -1,207 +1,125 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Book Details | The Archive</title>
-
     <link rel="stylesheet" href="style.css">
 
     <style>
-
         body {
-
             background: #f5f2eb;
-
             color: #29251f;
-
         }
 
         .details-heading {
-
             max-width: 1100px;
-
             margin: 65px auto 35px;
-
             padding: 0 25px;
-
         }
 
         .details-heading h1 {
-
             font-family: Georgia, serif;
-
             font-size: 48px;
-
             font-weight: normal;
-
             color: #182b59;
-
             margin: 15px 0;
-
         }
 
         .book-container {
-
             max-width: 1000px;
-
             margin: 0 auto 80px;
-
             padding: 40px;
-
             display: flex;
-
             gap: 55px;
-
             align-items: center;
-
             background: #e8dfd1;
-
         }
 
         .book-cover {
-
             width: 260px;
-
             height: 370px;
-
             object-fit: contain;
-
             box-shadow: 5px 7px 12px rgba(0,0,0,0.2);
-
         }
 
         .book-info {
-
             flex: 1;
-
         }
 
         .book-info h2 {
-
             font-family: Georgia, serif;
-
             font-size: 36px;
-
             font-weight: normal;
-
             color: #182b59;
-
             margin-bottom: 15px;
-
         }
 
         .book-info p {
-
             line-height: 1.8;
-
             color: #655e53;
-
             margin-bottom: 15px;
-
         }
 
         .book-info .author {
-
             font-size: 17px;
-
             color: #795438;
-
         }
 
         .book-info .label {
-
             color: #29251f;
-
             font-weight: bold;
-
         }
 
         .back-link {
-
             display: inline-block;
-
             margin-top: 15px;
-
             color: #182b59;
-
             text-decoration: none;
-
             border-bottom: 1px solid #182b59;
-
             padding-bottom: 4px;
-
         }
 
         @media (max-width: 700px) {
-
             .book-container {
-
                 flex-direction: column;
-
                 padding: 25px;
-
                 margin: 0 20px 50px;
-
                 gap: 30px;
-
             }
 
             .book-cover {
-
                 width: 210px;
-
                 height: 300px;
-
             }
 
             .book-info h2 {
-
                 font-size: 28px;
-
             }
-
         }
-
     </style>
-
 </head>
 
 <body>
 
     <header class="navbar">
-
         <a href="index.html" class="logo">THE ARCHIVE.</a>
 
         <nav>
-
             <a href="index.html">Home</a>
-
             <a href="index.html#collections">Collections</a>
-
             <a href="#">About</a>
-
-           <a href="my-shelf.html">My Shelf</a>
-
-           <a href="signin.html">Sign In</a>
-
+            <a href="my-shelf.html">My Shelf</a>
+            <a href="signin.html">Sign In</a>
         </nav>
-
     </header>
 
     <section class="details-heading">
-
         <p>THE ARCHIVE / BOOK COLLECTION</p>
-
         <h1>Inside the Book.</h1>
-
         <p>A little more about the story.</p>
-
     </section>
 
     <main class="book-container">
@@ -215,431 +133,341 @@
             <p class="author" id="author"></p>
 
             <p>
-
                 <span class="label">Genre:</span>
-
                 <span id="genre"></span>
-
             </p>
 
             <p>
-
                 <span class="label">Published:</span>
-
                 <span id="year"></span>
-
             </p>
 
             <p>
-
                 <span class="label">About the book:</span>
-
             </p>
 
             <p id="description"></p>
 
             <button id="saveButton" onclick="saveToShelf()">
+                + Add to My Shelf
+            </button>
 
-    + Add to My Shelf
-
-</button>
-
-            <a href="books.html" class="back-link">← Back to the bookshelf</a>
+            <a href="books.html" class="back-link">
+                ← Back to the bookshelf
+            </a>
 
         </div>
-
     </main>
 
-<section class="review-section">
+    <section class="review-section">
 
-    <h2>Reader's Corner.</h2>
+        <h2>Reader's Corner.</h2>
+        <p>What did you think of this book?</p>
 
-    <p>What did you think of this book?</p>
+        <form id="reviewForm">
 
-    <form id="reviewForm">
+            <label>Your Rating</label>
 
-        <label>Your Rating</label>
+            <div class="stars">
 
-        <div class="stars">
+                <input type="radio" name="rating" id="star5" value="5">
+                <label for="star5">★</label>
 
-            <input type="radio" name="rating" id="star5" value="5">
+                <input type="radio" name="rating" id="star4" value="4">
+                <label for="star4">★</label>
 
-            <label for="star5">★</label>
+                <input type="radio" name="rating" id="star3" value="3">
+                <label for="star3">★</label>
 
-            <input type="radio" name="rating" id="star4" value="4">
+                <input type="radio" name="rating" id="star2" value="2">
+                <label for="star2">★</label>
 
-            <label for="star4">★</label>
+                <input type="radio" name="rating" id="star1" value="1">
+                <label for="star1">★</label>
 
-            <input type="radio" name="rating" id="star3" value="3">
+            </div>
 
-            <label for="star3">★</label>
+            <label for="review">Write your review</label>
 
-            <input type="radio" name="rating" id="star2" value="2">
+            <textarea id="review" rows="5"
+                placeholder="Share your thoughts about this book..."></textarea>
 
-            <label for="star2">★</label>
+            <button type="submit">Submit Review</button>
 
-            <input type="radio" name="rating" id="star1" value="1">
+            <p id="message"></p>
 
-            <label for="star1">★</label>
+        </form>
 
+        <div id="reviewDisplay">
+            <h3>Reader Reviews</h3>
         </div>
 
-        <label for="review">Write your review</label>
-
-        <textarea id="review" rows="5"
-
-placeholder="Share your thoughts about this book..."></textarea>
-
-        <button type="submit">Submit Review</button>
-
-        <p id="message"></p>
-
-    </form>
-
-    <div id="reviewDisplay">
-
-        <h3>Reader Reviews</h3>
-
-    </div>
-
-</section>
+    </section>
 
     <footer>
-
         <p>THE ARCHIVE. — A place for everything worth remembering.</p>
-
     </footer>
 
-<script>
+    <script>
+
+        // BOOK DATABASE
+
+        const books = {
+
+            gatsby: {
+                title: "The Great Gatsby",
+                author: "F. Scott Fitzgerald",
+                genre: "Classic Fiction",
+                year: "1925",
+                cover: "https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg",
+                description: "Set in the Jazz Age, this novel follows Jay Gatsby and his mysterious life, exploring love, wealth and the American Dream."
+            },
+
+            pride: {
+                title: "Pride and Prejudice",
+                author: "Jane Austen",
+                genre: "Romance / Classic Fiction",
+                year: "1813",
+                cover: "https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg",
+                description: "Elizabeth Bennet navigates family expectations, first impressions and her complicated relationship with Mr Darcy."
+            },
+
+            norwegian: {
+                title: "Norwegian Wood",
+                author: "Haruki Murakami",
+                genre: "Literary Fiction",
+                year: "1987",
+                cover: "https://covers.openlibrary.org/b/isbn/9780375704024-L.jpg",
+                description: "A reflective story of memory, friendship and growing up."
+            },
+
+            alchemist: {
+                title: "The Alchemist",
+                author: "Paulo Coelho",
+                genre: "Adventure / Fiction",
+                year: "1988",
+                cover: "https://covers.openlibrary.org/b/isbn/9780062315007-L.jpg",
+                description: "A young shepherd travels in search of treasure and discovers lessons about dreams and courage."
+            },
+
+            mockingbird: {
+                title: "To Kill a Mockingbird",
+                author: "Harper Lee",
+                genre: "Classic Fiction",
+                year: "1960",
+                cover: "https://covers.openlibrary.org/b/isbn/9780061120084-L.jpg",
+                description: "A novel exploring justice, empathy and growing up."
+            },
+
+            mystery: {
+                title: "And Then There Were None",
+                author: "Agatha Christie",
+                genre: "Mystery",
+                year: "1939",
+                cover: "https://covers.openlibrary.org/b/isbn/9780062073488-L.jpg",
+                description: "Ten strangers arrive on an island, where mysterious events turn their visit into a puzzle."
+            },
+
+            potter: {
+                title: "Harry Potter and the Philosopher's Stone",
+                author: "J. K. Rowling",
+                genre: "Fantasy",
+                year: "1997",
+                cover: "https://covers.openlibrary.org/b/isbn/9780590353427-L.jpg",
+                description: "Harry discovers that he is a wizard and begins a new life at Hogwarts."
+            },
+
+            nineteen: {
+                title: "1984",
+                author: "George Orwell",
+                genre: "Dystopian Fiction",
+                year: "1949",
+                cover: "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
+                description: "In a society controlled by surveillance, Winston Smith begins to question the world around him."
+            },
+
+            hobbit: {
+                title: "The Hobbit",
+                author: "J. R. R. Tolkien",
+                genre: "Fantasy / Adventure",
+                year: "1937",
+                cover: "https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg",
+                description: "Bilbo Baggins joins an unexpected journey filled with dragons and adventure."
+            },
+
+            littlewomen: {
+                title: "Little Women",
+                author: "Louisa May Alcott",
+                genre: "Classic Fiction",
+                year: "1868",
+                cover: "https://covers.openlibrary.org/b/isbn/9780147514011-L.jpg",
+                description: "The four March sisters grow up together, facing changes and challenges."
+            }
+
+        };
+
+
+        // GET THE SELECTED BOOK FROM THE URL
 
-    const books = {
+        const params = new URLSearchParams(window.location.search);
+        const selectedBook = params.get("book");
+        const book = books[selectedBook];
 
-    gatsby: {
 
-        title: "The Great Gatsby",
+        // DISPLAY BOOK DETAILS
 
-        author: "F. Scott Fitzgerald",
+        if (book) {
 
-        genre: "Classic Fiction",
+            document.getElementById("title").textContent = book.title;
+            document.getElementById("author").textContent = "By " + book.author;
+            document.getElementById("genre").textContent = book.genre;
+            document.getElementById("year").textContent = book.year;
+            document.getElementById("description").textContent = book.description;
+            document.getElementById("cover").src = book.cover;
+            document.getElementById("cover").alt = book.title;
 
-        year: "1925",
+        } else {
 
-        cover: "https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg",
+            document.getElementById("title").textContent = "Book Not Found";
+            document.getElementById("description").textContent =
+                "Please return to the bookshelf and select a book.";
+            document.getElementById("cover").style.display = "none";
+            document.getElementById("saveButton").style.display = "none";
 
-        description: "Set in the Jazz Age, this novel follows Jay Gatsby and his mysterious life, exploring love, wealth and the American Dream."
+        }
 
-    },
 
-    pride: {
+        // SAVE BOOK TO MY SHELF
 
-        title: "Pride and Prejudice",
+        function saveToShelf() {
 
-        author: "Jane Austen",
+            if (!book) {
+                alert("Book not found!");
+                return;
+            }
 
-        genre: "Romance / Classic Fiction",
+            const savedItems =
+                JSON.parse(localStorage.getItem("myShelf")) || [];
 
-        year: "1813",
+            const bookLink = "book-details.html?book=" + selectedBook;
 
-        cover: "https://covers.openlibrary.org/b/isbn/9780141439518-L.jpg",
+            const alreadySaved = savedItems.some(function(item) {
+                return item.link === bookLink;
+            });
 
-        description: "Elizabeth Bennet navigates family expectations, first impressions and her complicated relationship with Mr Darcy."
+            if (alreadySaved) {
+                alert("Already saved to My Shelf!");
+                return;
+            }
 
-    },
+            savedItems.push({
+                title: book.title,
+                cover: book.cover,
+                category: "Book",
+                link: bookLink
+            });
 
-    norwegian: {
+            localStorage.setItem("myShelf", JSON.stringify(savedItems));
 
-        title: "Norwegian Wood",
+            alert("Added to My Shelf!");
 
-        author: "Haruki Murakami",
+        }
 
-        genre: "Literary Fiction",
 
-        year: "1987",
+        // REVIEW SYSTEM
 
-        cover: "https://covers.openlibrary.org/b/isbn/9780375704024-L.jpg",
+        const reviewForm = document.getElementById("reviewForm");
+        const reviewDisplay = document.getElementById("reviewDisplay");
+        const message = document.getElementById("message");
 
-        description: "A reflective story of memory, friendship and growing up."
+        const storageKey = "archiveReviews_" + selectedBook;
 
-    },
 
-    alchemist: {
+        // DISPLAY SAVED REVIEWS
 
-        title: "The Alchemist",
+        function showReviews() {
 
-        author: "Paulo Coelho",
+            const reviews =
+                JSON.parse(localStorage.getItem(storageKey)) || [];
 
-        genre: "Adventure / Fiction",
+            reviewDisplay.innerHTML = "<h3>Reader Reviews</h3>";
 
-        year: "1988",
+            if (reviews.length === 0) {
+                reviewDisplay.innerHTML +=
+                    "<p>No reviews yet. Be the first!</p>";
+            }
 
-        cover: "https://covers.openlibrary.org/b/isbn/9780062315007-L.jpg",
+            reviews.forEach(function(item) {
 
-        description: "A young shepherd travels in search of treasure and discovers lessons about dreams and courage."
+                const box = document.createElement("div");
+                box.className = "saved-review";
 
-    },
+                const stars = document.createElement("p");
+                stars.textContent = "Rating: " + "★".repeat(item.rating);
 
-    mockingbird: {
+                const comment = document.createElement("p");
+                comment.textContent = item.text;
 
-        title: "To Kill a Mockingbird",
+                box.appendChild(stars);
+                box.appendChild(comment);
 
-        author: "Harper Lee",
+                reviewDisplay.appendChild(box);
 
-        genre: "Classic Fiction",
+            });
 
-        year: "1960",
+        }
 
-        cover: "https://covers.openlibrary.org/b/isbn/9780061120084-L.jpg",
 
-        description: "A novel exploring justice, empathy and growing up."
+        // ADD A NEW REVIEW
 
-    },
+        reviewForm.addEventListener("submit", function(event) {
 
-    mystery: {
+            event.preventDefault();
 
-        title: "And Then There Were None",
+            if (!book) {
+                message.textContent = "Book not found.";
+                return;
+            }
 
-        author: "Agatha Christie",
+            const rating = document.querySelector(
+                'input[name="rating"]:checked'
+            );
 
-        genre: "Mystery",
+            const review = document.getElementById("review").value;
 
-        year: "1939",
+            if (!rating || review.trim() === "") {
 
-        cover: "https://covers.openlibrary.org/b/isbn/9780062073488-L.jpg",
+                message.textContent =
+                    "Please select a rating and write a review.";
 
-        description: "Ten strangers arrive on an island, where mysterious events turn their visit into a puzzle."
+                return;
 
-    },
+            }
 
-    potter: {
+            const reviews =
+                JSON.parse(localStorage.getItem(storageKey)) || [];
 
-        title: "Harry Potter and the Philosopher's Stone",
+            reviews.push({
+                rating: Number(rating.value),
+                text: review
+            });
 
-        author: "J. K. Rowling",
+            localStorage.setItem(storageKey, JSON.stringify(reviews));
 
-        genre: "Fantasy",
+            message.textContent = "Your review has been added!";
 
-        year: "1997",
+            reviewForm.reset();
 
-        cover: "https://covers.openlibrary.org/b/isbn/9780590353427-L.jpg",
+            showReviews();
 
-        description: "Harry discovers that he is a wizard and begins a new life at Hogwarts."
+        });
 
-    },
 
-    nineteen: {
+        // LOAD REVIEWS
 
-        title: "1984",
+        showReviews();
 
-        author: "George Orwell",
-
-        genre: "Dystopian Fiction",
-
-        year: "1949",
-
-        cover: "https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg",
-
-        description: "In a society controlled by surveillance, Winston Smith begins to question the world around him."
-
-    },
-
-    hobbit: {
-
-        title: "The Hobbit",
-
-        author: "J. R. R. Tolkien",
-
-        genre: "Fantasy / Adventure",
-
-        year: "1937",
-
-        cover: "https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg",
-
-        description: "Bilbo Baggins joins an unexpected journey filled with dragons and adventure."
-
-    },
-
-    littlewomen: {
-
-        title: "Little Women",
-
-        author: "Louisa May Alcott",
-
-        genre: "Classic Fiction",
-
-        year: "1868",
-
-        cover: "https://covers.openlibrary.org/b/isbn/9780147514011-L.jpg",
-
-        description: "The four March sisters grow up together, facing changes and challenges."
-
-    }
-
-};
-
-// GET SELECTED BOOK
-
-const selectedBook =
-
-    new URLSearchParams(window.location.search).get("book") || "gatsby";
-
-const book = books[selectedBook] || books.gatsby;
-
-// DISPLAY BOOK DETAILS
-
-document.getElementById("title").textContent = book.title;
-
-document.getElementById("author").textContent = "By " + book.author;
-
-document.getElementById("genre").textContent = book.genre;
-
-document.getElementById("year").textContent = book.year;
-
-document.getElementById("description").textContent = book.description;
-
-document.getElementById("cover").src = book.cover;
-
-document.getElementById("cover").alt = book.title;
-
-// Save show to My Shelf
-
-function saveToShelf() {
-
-    const savedItems = JSON.parse(localStorage.getItem("myShelf")) || [];
-
-    const alreadySaved = savedItems.some(function(item) {
-
-        return item.link === "book-details.html?book=" + selectedBook;
-
-    });
-
-    if (alreadySaved) {
-
-alert("Already saved to My Shelf!");
-
-        return;
-
-    }
-
-    savedItems.push({
-
-        title: book.title,
-
-        cover: book.cover,
-
-        category: "Book",
-
-        link: "book-details.html?book=" + selectedBook
-
-    });
-
-    localStorage.setItem("myShelf", JSON.stringify(savedItems));
-
-alert("Added to My Shelf!");
-
-}
-
-// REVIEW SYSTEM
-
-const reviewForm = document.getElementById("reviewForm");
-
-const reviewDisplay = document.getElementById("reviewDisplay");
-
-const storageKey = "archiveReviews_" + selectedBook;
-
-// DISPLAY SAVED REVIEWS
-
-function showReviews() {
-
-    const reviews =
-
-        JSON.parse(localStorage.getItem(storageKey)) || [];
-
-    reviewDisplay.innerHTML = "<h3>Reader Reviews</h3>";
-
-    if (reviews.length === 0) {
-
-        reviewDisplay.innerHTML += "<p>No reviews yet. Be the first!</p>";
-
-    }
-
-    reviews.forEach(function(item) {
-
-        const box = document.createElement("div");
-
-        box.className = "saved-review";
-
-        const stars = document.createElement("p");
-
-        stars.textContent = "Rating: " + "★".repeat(item.rating);
-
-        const comment = document.createElement("p");
-
-        comment.textContent = item.text;
-
-        box.appendChild(stars);
-
-        box.appendChild(comment);
-
-        reviewDisplay.appendChild(box);
-
-    });
-
-}
-
-// ADD A NEW REVIEW
-
-reviewForm.addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-    const rating = document.querySelector(
-
-        'input[name="rating"]:checked'
-
-    );
-
-    const review = document.getElementById("review").value;
-
-    if (!rating || review.trim() === "") {
-
-        document.getElementById("message").textContent =
-
-            "Please select a rating and write a review.";
-
-        return;
-
-    }
-
-    const reviews =
-
-        JSON.parse(localStorage.getItem(storageKey)) || [];
-
-    reviews.push({
-
-        rating: Number(rating.value),
-
-        text: review
-
-    });
-
-    localStorage.setItem(storageKey, JSON.stringify(reviews));
-
-    document.getElementById("message").textContent =
-
-        "Your review has been added!";
-
-    reviewForm.reset();
-
-showReviews();
-
-});
-
-// LOAD REVIEWS WHEN PAGE OPENS
-
-showReviews();
-
-</script>
+    </script>
 
 </body>
-
 </html>
